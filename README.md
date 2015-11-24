@@ -12,6 +12,8 @@
     
 ###效果图
  ![image](https://github.com/wming3/.vimToIDE/tree/master/image/vim_view.png)
+ 
+ 如果加载不出来, [请参考我的博客](http://blog.csdn.net/u010187139/article/details/50015339)上的图片
 ##安装
 ###版本要求
 
