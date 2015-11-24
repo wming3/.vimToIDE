@@ -11,7 +11,7 @@
     6. 查找、替换
     
 ###效果图
- ![image](https://github.com/wming3/.vimToIDE/image/vim_view.png)
+ ![image](https://github.com/wming3/.vimToIDE/tree/master/image/vim_view.png)
 ##安装
 ###版本要求
 
