@@ -1,0 +1,13 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=3465
+
+Tagbar displays the tags of the current file in a sidebar, similar to vimscript #273. But it has the advantage that it will display them ordered by their scope -- for example, methods and members in languages like C++, Python or Java will be listed under their correct class instead of just under the general categories 'functions' or 'variables'. This gives a more helpful overview of the file.
+
+Additionally the Tagbar window can be used to quickly jump to tags.
+
+Tagbar requires Exuberant ctags (http://ctags.sourceforge.net/) in at least version 5.5 to work.
+
+Plugin homepage with screenshots:
+http://majutsushi.github.com/tagbar/
+
+Code repository:
+https://github.com/majutsushi/tagbar
