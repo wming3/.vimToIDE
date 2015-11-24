@@ -1,3 +1,9 @@
+版本要求
+
+vim 版本>=7.3 低版本可以执行 Vim74Install.sh 安装
+
+查看vim版本  vim --version
+
 安装 步骤
 
 git clone https://github.com/wming3/.vimToIDE.git  ~/.vim
