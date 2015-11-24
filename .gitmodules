@@ -1,0 +1,69 @@
+[submodule "bundle/supertab"]
+	path = bundle/supertab
+	url = https://github.com/ervandew/supertab.git
+[submodule "bundle/tabular"]
+	path = bundle/tabular
+	url = https://github.com/godlygeek/tabular.git
+[submodule "bundle/nerdcommenter"]
+	path = bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "bundle/space"]
+	path = bundle/space
+	url = https://github.com/spiiph/vim-space.git
+[submodule "bundle/fuzzyfinder"]
+	path = bundle/fuzzyfinder
+	url = https://github.com/vim-scripts/FuzzyFinder.git
+[submodule "bundle/file-line"]
+	path = bundle/file-line
+	url = https://github.com/vim-scripts/file-line.git
+[submodule "bundle/nerdtree"]
+	path = bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "bundle/tagbar"]
+	path = bundle/tagbar
+	url = https://github.com/vim-scripts/Tagbar.git
+[submodule "bundle/easygrep"]
+	path = bundle/easygrep
+	url = https://github.com/gmccreight/vim-easygrep.git
+[submodule "bundle/conque-shell"]
+	path = bundle/conque-shell
+	url = https://github.com/vim-scripts/Conque-Shell
+[submodule "bundle/snipMate"]
+	path = bundle/snipMate
+	url = https://github.com/vim-scripts/snipMate.git
+[submodule "bundle/checksyntax"]
+	path = bundle/checksyntax
+	url = https://github.com/tomtom/checksyntax_vim.git
+[submodule "bundle/vscommand"]
+	path = bundle/vscommand
+	url = https://github.com/vim-scripts/vcscommand.vim.git
+[submodule "bundle/OmniCppComplete"]
+	path = bundle/OmniCppComplete
+	url = https://github.com/vim-scripts/OmniCppComplete
+[submodule "bundle/cscope"]
+	path = bundle/cscope
+	url = https://github.com/vim-scripts/cscope.vim.git
+[submodule "bundle/checksyntax_vim"]
+	path = bundle/checksyntax_vim
+	url = https://github.com/tomtom/checksyntax_vim.git
+[submodule "bundle/Conque-Shell"]
+	path = bundle/Conque-Shell
+	url = https://github.com/vim-scripts/Conque-Shell
+[submodule "bundle/vcscommand"]
+	path = bundle/vcscommand
+	url = https://github.com/vim-scripts/vcscommand.vim.git
+[submodule "bundle/vim-powerline"]
+	path = bundle/vim-powerline
+	url = https://github.com/Lokaltog/vim-powerline.git
+[submodule "bundle/minibufexpl"]
+	path = bundle/minibufexpl
+	url = https://github.com/fholgado/minibufexpl.vim
+[submodule "bundle/gundo"]
+	path = bundle/gundo
+	url = https://github.com/sjl/gundo.vim
+[submodule "bundle/molokai"]
+	path = bundle/molokai
+	url = https://github.com/tomasr/molokai.git
+[submodule "bundle/vundle"]
+	path = bundle/vundle
+	url = https://github.com/gmarik/vundle.git

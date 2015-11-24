@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/Users/baidu/.vim/bundle'
+let g:netrw_dirhist_2='/Users/baidu/code/aa'
+let g:netrw_dirhist_3='/Users/baidu/code/delivery'
+let g:netrw_dirhist_4='/Users/baidu/.vim'
+let g:netrw_dirhist_5='/Users/baidu/code/delivery'
+let g:netrw_dirhist_6='/Users/baidu/.vim'
+let g:netrw_dirhist_7='/Users/baidu/code/delivery'
