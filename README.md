@@ -1,6 +1,6 @@
 安装 步骤
 
-git clone git@github.com:wming3/.vimToIDE.git ~/.vim
+git clone https://github.com/wming3/.vimToIDE.git  ~/.vim
 
 cd ~/.vim
 
