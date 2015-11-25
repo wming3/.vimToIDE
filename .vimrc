@@ -37,72 +37,24 @@ call pathogen#infect()
 syntax on
 filetype plugin indent on
 
-" -----------------------------------------------------------------------------
-"  < 判断操作系统是否是 Windows 还是 Linux >
-" -----------------------------------------------------------------------------
-let g:iswindows = 0
-let g:islinux = 0
-if(has("win32") || has("win64") || has("win95") || has("win16"))
-    let g:iswindows = 1
-else
-    let g:islinux = 1
-endif
+set nu
+set tabstop=4
+set hlsearch
+set incsearch
+set shiftwidth=4
+set autoindent
+set expandtab
+set mouse=a
+set writebackup
 
+syntax enable
+set nocp
+set background=dark
+colorscheme solarized
 
-" -----------------------------------------------------------------------------
-"  < 判断是终端还是 Gvim >
-" -----------------------------------------------------------------------------
-if has("gui_running")
-    let g:isGUI = 1
-else
-    let g:isGUI = 0
-endif
-
-" =============================================================================
-"        << 界面&主题配置 >>
-" =============================================================================
-" 设置代码配色方案
-if g:isGUI
-     "colorscheme solarized
-     colorscheme molokai 
-   set background=dark
-else
-     "colorscheme molokai
-     colorscheme gruvbox
-     set background=dark
-endif
-
-" 显示/隐藏菜单栏、工具栏、滚动条，可用 Ctrl + F11 切换
-if g:isGUI
-    set guioptions-=m
-    set guioptions-=T
-    set guioptions-=r
-    set guioptions-=L
-    map <silent> <c-F11> :if &guioptions =~# 'm' <Bar>
-        \set guioptions-=m <Bar>
-        \set guioptions-=T <Bar>
-        \set guioptions-=r <Bar>
-        \set guioptions-=L <Bar>
-    \else <Bar>
-        \set guioptions+=m <Bar>
-        \set guioptions+=T <Bar>
-        \set guioptions+=r <Bar>
-        \set guioptions+=L <Bar>
-    \endif<CR>
-endif
-
-set guifont=YaHei\ Consolas\ Hybrid\ 12               "设置 gvim 显示字体
-set number                                            "显示行号
-set laststatus=2                                      "启用状态栏信息
-"set cmdheight=2                                       "设置命令行的高度为2，默认为1
-set ruler                                             "显示光标当前位置
-set cursorline                                        "高亮显示当前行/列
-"set cursorcolumn
-set nofoldenable                                      "不启用折叠
-set nowrap                                            "设置不自动换行
-set shortmess=atI                                     "去掉欢迎界面
-"set gcr=a:block-blinkon0                             "禁止光标闪烁
-set hlsearch                                          "高亮显示搜索结果
+" tags settting
+" set tags=tags;
+" set autochdir
 
 let NERDTreeChristmasTree=1
 let NERDTreeMouseMode=2
@@ -205,6 +157,74 @@ let g:solarized_bold=1
 let g:solarized_diffmode="normal"
 let g:solarized_hitrail=0
 let g:solarized_menu=1
+
+
+" -----------------------------------------------------------------------------
+"  < 判断操作系统是否是 Windows 还是 Linux >
+" -----------------------------------------------------------------------------
+let g:iswindows = 0
+let g:islinux = 0
+if(has("win32") || has("win64") || has("win95") || has("win16"))
+    let g:iswindows = 1
+else
+    let g:islinux = 1
+endif
+
+
+" -----------------------------------------------------------------------------
+"  < 判断是终端还是 Gvim >
+" -----------------------------------------------------------------------------
+if has("gui_running")
+    let g:isGUI = 1
+else
+    let g:isGUI = 0
+endif
+
+" =============================================================================
+"        << 界面&主题配置 >>
+" =============================================================================
+" 设置代码配色方案
+if g:isGUI
+     "colorscheme solarized
+     colorscheme molokai 
+   set background=dark
+else
+     "colorscheme molokai
+     colorscheme gruvbox
+     set background=dark
+endif
+
+" 显示/隐藏菜单栏、工具栏、滚动条，可用 Ctrl + F11 切换
+if g:isGUI
+    set guioptions-=m
+    set guioptions-=T
+    set guioptions-=r
+    set guioptions-=L
+    map <silent> <c-F11> :if &guioptions =~# 'm' <Bar>
+        \set guioptions-=m <Bar>
+        \set guioptions-=T <Bar>
+        \set guioptions-=r <Bar>
+        \set guioptions-=L <Bar>
+    \else <Bar>
+        \set guioptions+=m <Bar>
+        \set guioptions+=T <Bar>
+        \set guioptions+=r <Bar>
+        \set guioptions+=L <Bar>
+    \endif<CR>
+endif
+
+set guifont=YaHei\ Consolas\ Hybrid\ 12               "设置 gvim 显示字体
+set number                                            "显示行号
+set laststatus=2                                      "启用状态栏信息
+"set cmdheight=2                                       "设置命令行的高度为2，默认为1
+set ruler                                             "显示光标当前位置
+set cursorline                                        "高亮显示当前行/列
+"set cursorcolumn
+set nofoldenable                                      "不启用折叠
+set nowrap                                            "设置不自动换行
+set shortmess=atI                                     "去掉欢迎界面
+"set gcr=a:block-blinkon0                             "禁止光标闪烁
+set hlsearch                                          "高亮显示搜索结果
 
 
 " =============================================================================
@@ -440,7 +460,7 @@ let g:indentLine_color_term = 239
 " 那里面列出了当前文件中的所有宏,全局变量, 函数名等
 nnoremap <Leader>tl :TagbarToggle<CR>       "设置显示／隐藏标签列表子窗口的快捷键
 let tagbar_right=1                          "设置 tagbar 子窗口的位置出现在主编辑区的左边
-let tagbar_width=2                         "设置标签子窗口的宽度
+let tagbar_width=20                         "设置标签子窗口的宽度
 let g:tagbar_compact=1                      "tagbar 子窗口中不显示冗余帮助信息
 
 "------------------------------------------------------------------------
@@ -468,4 +488,3 @@ autocmd VimEnter * set nu
 " autocmd VimEnter * TagbarToggle
 autocmd VimEnter * MBEOpen
 autocmd BufNewFile *.php call CopyRight("phpfile","0")
-
