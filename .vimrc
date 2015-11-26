@@ -299,10 +299,10 @@ endif
 set guifont=YaHei\ Consolas\ Hybrid\ 12               "设置 gvim 显示字体
 set number                                            "显示行号
 set laststatus=2                                      "启用状态栏信息
-"set cmdheight=2                                       "设置命令行的高度为2，默认为1
+set cmdheight=2                                       "设置命令行的高度为2，默认为1
 set ruler                                             "显示光标当前位置
 set cursorline                                        "高亮显示当前行/列
-set cursorcolumn
+"set cursorcolumn
 set nofoldenable                                      "不启用折叠
 set nowrap                                            "设置不自动换行
 set shortmess=atI                                     "去掉欢迎界面
@@ -578,7 +578,7 @@ noremap <c-l> <c-w>l
 
 nnoremap <Leader>tl :TagbarToggle<CR>       "设置显示／隐藏标签列表子窗口的快捷键
 let tagbar_right=1                          "设置 tagbar 子窗口的位置出现在主编辑区的左边
-let tagbar_width=20                         "设置标签子窗口的宽度 
+let tagbar_width=30                         "设置标签子窗口的宽度 
 let g:tagbar_compact=1                      "tagbar 子窗口中不显示冗余帮助信息 
 
 "------------------------------------------------------------------------
