@@ -1,30 +1,6 @@
-" =============================================================================
-"                            << 设置快捷键映射 >>
-" =============================================================================
-let mapleader=";"                                     " 定义快捷键的前缀，即<Leader>
-nnoremap lb 0                                             " 映射行尾行首
-nnoremap le $
-vnoremap <Leader>y "+y                                " 设置快捷键将选中文本块复制至系统剪贴板
-nmap <Leader>p "+p                                    " 设置快捷键将系统剪贴板内容粘贴至 vim
-nmap <Leader>Y "*y                                    " 设置快捷键将选中文本复制到系统缓冲区
-nmap <Leader>P "*p                                    " 设置快捷键将系统缓冲区内容粘贴至 vim
-nnoremap <Leader>q :q<CR>" 定义快捷键关闭当前分割窗口
-nnoremap <Leader>, :w<CR>" 定义快捷键保存当前窗口内容
-nmap <Leader>WAQ :wa<CR>:q<CR>                        " 定义快捷键保存所有窗口内容并退出 vim
-nmap <Leader>Q :qa!<CR>                               " 不做任何保存，直接退出 vim
-nnoremap wn <C-W><C-W>                                " 依次遍历子窗口
-nnoremap wp <C-w>p                                    " 逆向遍历窗口
-nnoremap <Leader>lw <C-W>l                            " 跳转至右方的窗口
-nnoremap <Leader>hw <C-W>h                            " 跳转至左方的窗口
-nnoremap <Leader>kw <C-W>k                            " 跳转至上方的子窗口
-nnoremap <Leader>jw <C-W>j                            " 跳转至下方的子窗口
-nnoremap <Leader>Lw <C-W>L                            " 跳转至最右方的窗口
-nnoremap <Leader>Hw <C-W>H                            " 跳转至最左方的窗口
-nnoremap <Leader>Kw <C-W>K                            " 跳转至最上方的子窗口
-nnoremap <Leader>Jw <C-W>J                            " 跳转至最下方的子窗口
-nmap <Leader>pa %" 定义快捷键在结对符之间跳转，助记pair
-nmap <Leader><Leader>tn :tnext<CR>                   " 正向遍历同名标签
-nmap <Leader><Leader>tp :tprevious<CR>               " 反向遍历同名标签
+"------------------------------------------------------------------------
+" < other >
+"------------------------------------------------------------------------
 
 if has("win32")
     set nocompatible
@@ -142,6 +118,14 @@ function! NumberToggle()
 endfunc
 nnoremap <C-r> :call NumberToggle()<cr>
 
+
+" 配色方案
+if has("gui_running")
+    colo solarized
+else
+    colo desert
+endif
+
 "--------------------------------------------------
 " Name: solarized
 " Git: https://github.com/altercation/vim-colors-solarized.git
@@ -159,6 +143,38 @@ let g:solarized_hitrail=0
 let g:solarized_menu=1
 
 
+" =============================================================================
+"                            << 设置快捷键映射 >>
+" =============================================================================
+let mapleader=";"                                     " 定义快捷键的前缀，即<Leader>
+nnoremap lb 0                                             " 映射行尾行首
+nnoremap le $
+vnoremap <Leader>y "+y                                " 设置快捷键将选中文本块复制至系统剪贴板
+nmap <Leader>p "+p                                    " 设置快捷键将系统剪贴板内容粘贴至 vim
+nmap <Leader>Y "*y                                    " 设置快捷键将选中文本复制到系统缓冲区
+nmap <Leader>P "*p                                    " 设置快捷键将系统缓冲区内容粘贴至 vim
+nnoremap <Leader>q :q<CR>" 定义快捷键关闭当前分割窗口
+nnoremap <Leader>, :w<CR>" 定义快捷键保存当前窗口内容
+nmap <Leader>WAQ :wa<CR>:q<CR>                        " 定义快捷键保存所有窗口内容并退出 vim
+nmap <Leader>Q :qa!<CR>                               " 不做任何保存，直接退出 vim
+nnoremap wn <C-W><C-W>                                " 依次遍历子窗口
+nnoremap wp <C-w>p                                    " 逆向遍历窗口
+nnoremap <Leader>lw <C-W>l                            " 跳转至右方的窗口
+nnoremap <Leader>hw <C-W>h                            " 跳转至左方的窗口
+nnoremap <Leader>kw <C-W>k                            " 跳转至上方的子窗口
+nnoremap <Leader>jw <C-W>j                            " 跳转至下方的子窗口
+nnoremap <Leader>Lw <C-W>L                            " 跳转至最右方的窗口
+nnoremap <Leader>Hw <C-W>H                            " 跳转至最左方的窗口
+nnoremap <Leader>Kw <C-W>K                            " 跳转至最上方的子窗口
+nnoremap <Leader>Jw <C-W>J                            " 跳转至最下方的子窗口
+nmap <Leader>pa %" 定义快捷键在结对符之间跳转，助记pair
+nmap <Leader><Leader>tn :tnext<CR>                   " 正向遍历同名标签
+nmap <Leader><Leader>tp :tprevious<CR>               " 反向遍历同名标签
+
+" =============================================================================
+"        << 判断操作系统是 Windows 还是 Linux 和判断是终端还是 Gvim >>
+" =============================================================================
+
 " -----------------------------------------------------------------------------
 "  < 判断操作系统是否是 Windows 还是 Linux >
 " -----------------------------------------------------------------------------
@@ -170,7 +186,6 @@ else
     let g:islinux = 1
 endif
 
-
 " -----------------------------------------------------------------------------
 "  < 判断是终端还是 Gvim >
 " -----------------------------------------------------------------------------
@@ -179,6 +194,74 @@ if has("gui_running")
 else
     let g:isGUI = 0
 endif
+
+" =============================================================================
+"                          << 插件管理 >>
+" =============================================================================
+" 用于更方便的管理vim插件，具体用法参考 :h vundle 帮助
+" 安装方法为在终端输入如下命令
+" git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+" 如果想在 windows 安装就必需先安装 "git for window"，可查阅网上资料
+
+set nocompatible                                      "禁用 Vi 兼容模式
+filetype off                                          "禁用文件类型侦测
+
+if g:islinux
+    set rtp+=~/.vim/bundle/vundle/
+    call vundle#rc()
+else
+    set rtp+=$VIM/vimfiles/bundle/vundle/
+    call vundle#rc('$VIM/vimfiles/bundle/')
+endif
+
+" 使用Vundle来管理Vundle，这个必须要有。
+Bundle 'gmarik/vundle'
+
+" 以下为要安装或更新的插件，不同仓库都有（具体书写规范请参考帮助）
+Bundle 'xml.vim'
+"Bundle 'a.vim'
+Bundle 'Align'
+Bundle 'jiangmiao/auto-pairs'
+"Bundle 'yegappan/grep'
+Bundle 'mileszs/ack.vim'
+Bundle 'dyng/ctrlsf.vim'
+"Bundle 'ccvext.vim'
+Bundle 'Yggdroot/indentLine'
+"Bundle 'Mark--Karkat'
+"Bundle 'Shougo/neocomplcache.vim'
+Bundle 'Shougo/neocomplete'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdtree'
+"Bundle 'OmniCppComplete'
+Bundle 'Lokaltog/vim-powerline'
+"Bundle 'msanders/snipmate.vim'
+"Bundle 'wesleyche/SrcExpl'
+"Bundle 'std_c.zip'
+"Bundle 'tpope/vim-surround'
+"Bundle 'scrooloose/syntastic'
+Bundle 'vim-scripts/indexer.tar.gz'
+Bundle 'DfrankUtil'
+Bundle 'vimprj'
+Bundle 'majutsushi/tagbar'
+"Bundle 'ZoomWin'
+"Bundle 'tpope/vim-markdown'
+"Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'fholgado/minibufexpl.vim'
+"Plugin 'shawncplus/phpcomplete.vim'
+"Bundle 'ctrlpvim/ctrlp.vim'
+" Bundle 'cSyntaxAfter'
+" Bundle 'javacomplete'
+" Bundle 'vim-javacompleteex'               "更好的 Java 补全插件
+" Bundle 'mattn/emmet-vim'
+" Bundle 'fholgado/minibufexpl.vim'         "好像与 Vundle 插件有一些冲突
+" Bundle 'Shougo/neocomplcache.vim'
+" Bundle 'repeat.vim'
+" Bundle 'ervandew/supertab'                "有时与 snipmate 插件冲突
+" Bundle 'taglist.vim'
+" Bundle 'TxtBrowser'
+" Bundle 'Valloric/YouCompleteMe'
+" Plugin 'exvim/ex-minibufexpl'                "exvim插件之一。修复BUG
+
 
 " =============================================================================
 "        << 界面&主题配置 >>
@@ -219,7 +302,7 @@ set laststatus=2                                      "启用状态栏信息
 "set cmdheight=2                                       "设置命令行的高度为2，默认为1
 set ruler                                             "显示光标当前位置
 set cursorline                                        "高亮显示当前行/列
-"set cursorcolumn
+set cursorcolumn
 set nofoldenable                                      "不启用折叠
 set nowrap                                            "设置不自动换行
 set shortmess=atI                                     "去掉欢迎界面
@@ -348,7 +431,6 @@ nnoremap <Leader>rc :call Replace(1, 0, input('Replace '.expand('<cword>').' wit
 nnoremap <Leader>rcw :call Replace(1, 1, input('Replace '.expand('<cword>').' with: '))<CR>
 nnoremap <Leader>rwc :call Replace(1, 1, input('Replace '.expand('<cword>').' with: '))<CR>
 
-
 "----------------------PHP函数自动补全----------------------------------------
 set dictionary-=$VIM/vimfiles/TXT/php_funclist.txt dictionary+=$VIM/vimfiles/TXT/php_funclist.txt
 set complete-=k complete+=k
@@ -358,10 +440,9 @@ function AddPHPFuncList()
     set complete-=k complete+=k
 endfunction
 
-
 "-------------------------版权信息------------------------
 function CopyRight(type, position) 
-	let author = “wangtengtao <wangtengtao@iwaimai.baidu.com>"
+	let author = "wangtengtao_iwm <wangtengtao@iwaimai.baidu.com>"
     if a:position == 'curr'
         let line_num = line(".")
     else
@@ -440,6 +521,109 @@ function BufferOpen()
 endfunction
 
 
+" =============================================================================
+"                          << 插件配置 >>
+" =============================================================================
+
+"------------------------------------------------------------------------
+" < vim-powerline >
+"------------------------------------------------------------------------
+if g:isGUI
+    let g:Powerline_colorscheme='solarized256'
+else
+    let g:Powerline_colorscheme='solarized'
+endif
+
+"------------------------------------------------------------------------
+" < vim-indent-guides >
+"------------------------------------------------------------------------
+" 随 vim 自启动
+"let g:indent_guides_enable_on_vim_startup=1
+" 从第二层开始可视化显示缩进
+"let g:indent_guides_start_level=2
+" 色块宽度
+"let g:indent_guides_guide_size=1
+" 快捷键 i 开/关缩进可视化
+":nmap <silent> <Leader>i <Plug>IndentGuidesToggle
+
+"------------------------------------------------------------------------
+" < Align >
+"------------------------------------------------------------------------
+" 一个对齐的插件，用来——排版与对齐代码，功能强大，不过用到的机会不多
+
+"------------------------------------------------------------------------
+" < minibufexpl >
+"------------------------------------------------------------------------
+" 显示/隐藏 MiniBufExplorer 窗口
+let g:miniBufExplMapCTabSwitchBufs=1
+map <Leader>bl :MBEToggle<cr>
+map <Leader>bo :MBEOpen<cr>
+map <Leader>bc :MBEClose<cr>
+" buffer 切换快捷键
+map <C-Tab> :MBEbn<cr>
+map <C-S-Tab> :MBEbp<cr>
+map <Leader><Leader>d :MBEbd<cr>
+map <Leader><Leader>b :call BufferOpen()<cr>
+" 在不使用 MiniBufExplorer 插件时也可用<C-k,j,h,l>切换到上下左右的窗口中去
+noremap <c-k> <c-w>k
+noremap <c-j> <c-w>j
+noremap <c-h> <c-w>h
+noremap <c-l> <c-w>l
+
+"------------------------------------------------------------------------
+" < tagbar >
+"------------------------------------------------------------------------
+" 高效地浏览源码, 其功能就像vc中的workpace
+" 那里面列出了当前文件中的所有宏,全局变量, 函数名等
+
+nnoremap <Leader>tl :TagbarToggle<CR>       "设置显示／隐藏标签列表子窗口的快捷键
+let tagbar_right=1                          "设置 tagbar 子窗口的位置出现在主编辑区的左边
+let tagbar_width=20                         "设置标签子窗口的宽度 
+let g:tagbar_compact=1                      "tagbar 子窗口中不显示冗余帮助信息 
+
+"------------------------------------------------------------------------
+" < indexer >
+"------------------------------------------------------------------------
+set tags+=/home/lancelot/resources/tags/ap-tags
+let g:indexer_ctagsCommandLineOptions="--c++-kinds=+p+l+x+c+d+e+f+g+m+n+s+t+u+v --php-kinds=+c+i+d+f+v+j --python-kinds=+c+f+m+v+i --sql-kinds=+c+d+f+F+l+L+p+P+r+s+t+T+v+i+e+U+R+D+V+n+x+y+z --vim-kinds=+a+c+f+m+v --java-kinds=+c+e+f+g+i+l+m+p --javascript-kinds=+f+c+m+p+v --fields=+iaSl --extra=+q"
+
+"------------------------------------------------------------------------
+" < ctrlsf.vim >
+"------------------------------------------------------------------------
+nnoremap <Leader>ss :call Search(input('input search string:'))<CR>
+nnoremap <Leader>si :call Search(0)<CR>
+nnoremap <Leader>so :call SearchResult(1)<CR>
+nnoremap <Leader>sc :call SearchResult(0)<CR>
+
+"------------------------------------------------------------------------
+" < nerdtree >
+"------------------------------------------------------------------------
+" 使用 NERDTree 插件查看工程文件。设置快捷键，速记：file list
+nmap <Leader>fl :NERDTreeToggle<CR>
+" 设置NERDTree子窗口宽度
+let NERDTreeWinSize=28
+" 设置NERDTree子窗口位置
+let NERDTreeWinPos="left"
+" 显示隐藏文件
+let NERDTreeShowHidden=0
+" NERDTree 子窗口中不显示冗余帮助信息
+let NERDTreeMinimalUI=1
+" 删除文件时自动删除文件对应 buffer
+let NERDTreeAutoDeleteBuffer=1
+
+"------------------------------------------------------------------------
+" < nerdcommenter >
+"------------------------------------------------------------------------
+" 我主要用于C/C++代码注释(其它的也行)
+" 以下为插件默认快捷键，其中的说明是以C/C++为例的，其它语言类似
+" <Leader>ci 以每行一个 /* */ 注释选中行(选中区域所在行)，再输入则取消注释
+" <Leader>cm 以一个 /* */ 注释选中行(选中区域所在行)，再输入则称重复注释
+" <Leader>cc 以每行一个 /* */ 注释选中行或区域，再输入则称重复注释
+" <Leader>cu 取消选中区域(行)的注释，选中区域(行)内至少有一个 /* */
+" <Leader>ca 在/*...*/与//这两种注释方式中切换（其它语言可能不一样了）
+" <Leader>cA 行尾注释
+let NERDSpaceDelims = 1                     "在左注释符之后，右注释符之前留有空格
+
 "------------------------------------------------------------------------
 " < indentline  >
 "------------------------------------------------------------------------
@@ -452,16 +636,6 @@ if g:isGUI
     let g:indentLine_first_char = "┊"
 endif
 let g:indentLine_color_term = 239
-
-"------------------------------------------------------------------------
-" < tagbar >
-"------------------------------------------------------------------------
-" 高效地浏览源码, 其功能就像vc中的workpace
-" 那里面列出了当前文件中的所有宏,全局变量, 函数名等
-nnoremap <Leader>tl :TagbarToggle<CR>       "设置显示／隐藏标签列表子窗口的快捷键
-let tagbar_right=1                          "设置 tagbar 子窗口的位置出现在主编辑区的左边
-let tagbar_width=30                         "设置标签子窗口的宽度
-let g:tagbar_compact=1                      "tagbar 子窗口中不显示冗余帮助信息
 
 "------------------------------------------------------------------------
 " < neocomplete >
@@ -479,12 +653,10 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
 autocmd FileType sql setlocal omnifunc=sqlcomplete#Complete
 
+
 " =============================================================================
 "                          << autocmd >>
 " =============================================================================
 " autocmd VimEnter * call ToggleFullscreen()                " 启动 vim 时自动全屏
-" autocmd VimEnter * NERDTree
 autocmd VimEnter * set nu
-" autocmd VimEnter * TagbarToggle
-autocmd VimEnter * MBEOpen
 autocmd BufNewFile *.php call CopyRight("phpfile","0")
